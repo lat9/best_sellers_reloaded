@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Best Sellers Reloaded, v2.0.0</title>
+
+<style type="text/css">
+<!--
+a, a:active, a:visited { color: #006666; text-decoration: none; }
+a:hover { color:#00CC99; text-decoration: underline; }
+BODY, P, H1, H2, H3, H4, H5, H6, LI, TD, DD, DT, table {
+  font-family: Verdana, AvantGarde, Tahoma, Arial, sans-serif;
+  font-size: 10pt;
+  color: black;
+  padding: 0px;
+  margin: 20px;
+}
+H1, H2, H3, H4 { font-weight: bold; }
+h1 { font-size: 20px; }
+h2 { font-size: 16px; border-top: 1px solid #444; padding-top: 5px; }
+table { border-collapse: collapse; border: 1px solid #444; }
+th, td { padding: 5px; text-align: left; border: 1px solid #444; }
+ol li, ul li { margin: 5px 0 0 0; }
+pre { margin-left: 20px; }
+-->
+</style>
+</head>
+
+<body>
+<a name="top" id="top"></a>
+<h1>Best Sellers Reloaded</h1>
+<h3>Version 2.0.0</h3>
+<p>Current Support Thread at Zen Cart Forums: <a href="http://www.zen-cart.com/showthread.php?68445-Best-Sellers-Reloaded">http://www.zen-cart.com/showthread.php?68445-Best-Sellers-Reloaded</a>.  This software is provided for your use under the GNU General Public License.</p>
+
+<h2>What it does</h2>
+<p>This plugin allows you to display your best sellers on the main page of your website (in the center column) &mdash; just like featured products. Starting with v2.0.0, the centerbox also displays on the category-listing pages, if enabled in the admin's configuration.</p>
+<p>You can control various aspects (such as image size and number of columns) of the best sellers center box from the admin's <em>Configuration-&gt;Best Sellers</em>:</p>
+<table>
+  <tr>
+    <th>Field Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Show Best Sellers - Main Page</td>
+    <td>Show the <em>Best Sellers</em> on the main page? Set to <em>0</em> to disable or set the sort order for the display.</td>
+  </tr>
+  <tr>
+    <td>Show Best Sellers - Main Page w/ Categories</td>
+    <td>Show the <em>Best Sellers</em> on the categories' listings? Set to <em>0</em> to disable or set the sort order for the display.</td>
+  </tr>
+  <tr>
+    <td>Maximum Display of Best Sellers</td>
+    <td>The maximum number of best sellers to list in an enabled center-box.</td>
+  </tr>
+  <tr>
+    <td>Best Sellers - Columns per Row</td>
+    <td>The number of columns to display in an enabled center-box.</td>
+  </tr>
+  <tr>
+    <td>Best Sellers - Image Width</td>
+    <td>The width of the <em>Best Sellers</em> images.</td>
+  </tr>
+  <tr>
+    <td>Best Sellers - Image Height</td>
+    <td>The height of the <em>Best Sellers</em> images.</td>
+  </tr>
+  <tr>
+    <td>Best Sellers - Show Out-of-Stock?</td>
+    <td>Show out-of-stock products in the <em>Best Sellers</em> centerbox?</td>
+  </tr>
+</table>
+
+<h2>Installation</h2>
+<p>There are no core-file overwrites in this plugin, but there are two template-override files; you should <strong>always</strong> backup your cart's database and files prior to making any changes.</p>
+<ol>
+  <li>Unzip the plugin's package file and<ol>
+    <li>Rename the YOUR_ADMIN folder to match your custom admin folder's name.</li>
+    <li>Rename the YOUR_TEMPLATE folder to match your store's current template.</li>
+  </ol></li>
+  <li>If you currently have a template-override version of the following files, merge those changes with the changes supplied by this plugin:<ol>
+    <li>/includes/templates/YOUR_TEMPLATE/templates/tpl_index_default.php</li>
+    <li>/includes/templates/YOUR_TEMPLATE/templates/tpl_index_categories.php</li>
+  </ol></li>
+  <li>Copy the files provided by the plugin to your Zen Cart:<ol>
+    <li>/includes/languages/english/extra_definitions/best_sellers_reloaded.php</li>
+    <li>/includes/modules/best_sellers_reloaded.php</li>
+    <li>/includes/templates/template_default/css/stylesheet_best_sellers_reloaded.css</li>
+    <li>/includes/templates/template_default/templates/tpl_modules_best_sellers_reloaded.php</li>
+    <li>/includes/templates/YOUR_TEMPLATE/templates/tpl_index_default.php</li>
+    <li>/includes/templates/YOUR_TEMPLATE/templates/tpl_index_categories.php</li>
+    <li>/YOUR_ADMIN/includes/functions/extra_functions/init_best_sellers_reloaded.php</li>
+    <li>/YOUR_ADMIN/includes/languages/english/extra_definitions/best_sellers_reloaded_definitions.php</li>
+  </ol></li>
+  <li>Log into (or refresh the screen on) your Zen Cart admin; the plugin's initialization script creates <em>Configuration-&gt;Best Sellers</em>.</li>
+</ol>
+
+<h2>Uninstall</h2>
+<p>Replace the backup copies of the files you copied during the installation, delete the new files and run the plugin's file <code>/uninstall_best_sellers_reloaded.sql</code>.</p>
+
+<h2>Version History:</h2>
+<ul>
+  <li>v2.0.0, 2015-01-14 (lat9):<ul>
+    <li>Supports Zen Cart v1.5.0 and later.</li>
+    <li>SQL installation moved to an admin-level initialization script.</li>
+    <li>Added ability to display the Best Sellers on the category listing.</li>
+  </ul></li>
+  <li>v1.1, 2007-07-22 (Alex Clarke):<ul>
+    <li>Improved installation SQL for MySQL 5</li>
+    <li>Added admin switch to enable/disable the display of out of stock products</li>
+  </ul></li>
+  <li>v1.0, 2007-06-16 (Alex Clarke): Initial release.</li>
+</ul>
+</body>
+</html>
